@@ -408,6 +408,9 @@ const schema = a.schema({
       commentVisibility: a.enum(['all', 'editors', 'owner']),
       projectOwnerId: a.id().required(),
       deletedAt: a.datetime(),
+      project: a.belongsTo('Project', 'projectId'),
+      version: a.belongsTo('Version', 'versionId'),
+      asset: a.belongsTo('Asset', 'assetId'),
     })
     .authorization((allow) => [
       allow.ownersDefinedIn('editorUserIds'),
@@ -446,6 +449,7 @@ const schema = a.schema({
       viewSettings: a.json(),
 
       lastAccessedAt: a.datetime(),
+      project: a.belongsTo('Project', 'projectId'),
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('projectOwnerId'),
@@ -473,6 +477,7 @@ const schema = a.schema({
       shareLinkEnabled: a.boolean(),
       commentVisibility: a.enum(['all', 'editors', 'owner']),
       reason: a.string(),
+      project: a.belongsTo('Project', 'projectId'),
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('projectOwnerId').to(['read']),
@@ -533,6 +538,7 @@ const schema = a.schema({
       label: a.string().required(),
       sortOrder: a.integer(),
       deletedAt: a.datetime(),
+      user: a.belongsTo('User', 'userId'),
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('userId'),
@@ -547,6 +553,7 @@ const schema = a.schema({
     .model({
       followerId: a.id().required(),
       followeeId: a.id().required(),
+      follower: a.belongsTo('User', 'followerId'),
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('followerId'),
