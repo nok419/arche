@@ -164,6 +164,7 @@ const schema = a.schema({
       comments: a.hasMany('Comment', 'projectId'),
       shareLinks: a.hasMany('ShareLink', 'projectId'),
       accessHistory: a.hasMany('ProjectAccessHistory', 'projectId'),
+      bookmarks: a.hasMany('ProjectBookmark', 'projectId'),
       deletedAt: a.datetime(),
     })
     .authorization((allow) => [
