@@ -1,0 +1,134 @@
+/* arche Design Tokens */
+:root {
+  /* Colors */
+  --color-bg: #222831;
+  --color-bg-secondary: #31363F;
+  --color-text: #EEEEEE;
+  --color-text-muted: #9ca3af;
+  --color-accent: #76ABAE;
+  --color-warning: #EB4747;
+  --color-success: #ABC9FF;
+  --color-link: #FF8B8B;
+  --color-border: #FFDEDE;
+  --color-shadow: #31363F;
+
+  /* Gradients */
+  --gradient-1: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  --gradient-2: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+  /* Typography */
+  --font-family-base: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-body: 16px;
+  --font-size-small: 13px;
+  --line-height-h1: 40px;
+  --line-height-h2: 32px;
+  --line-height-body: 24px;
+  --line-height-small: 20px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(49, 54, 63, 0.25);
+  --shadow-md: 0 6px 20px rgba(49, 54, 63, 0.35);
+  --shadow-lg: 0 16px 40px rgba(49, 54, 63, 0.45);
+  --shadow-modal: 0 24px 60px rgba(49, 54, 63, 0.6);
+
+  /* Glass Effect */
+  --glass-bg: rgba(49, 54, 63, 0.7);
+  --glass-blur: 16px;
+  --glass-fallback-bg: #31363F;
+
+  /* Layout */
+  --layout-main: 60;
+  --layout-side: 40;
+  --bp-mobile: 640px;
+  --bp-desktop: 1280px;
+
+  /* Timeline */
+  --timeline-edge-bg: #31363F;
+  --timeline-edge-accent: #76ABAE;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+@supports not (backdrop-filter: blur(16px)) {
+  .glass {
+    background: var(--glass-fallback-bg);
+  }
+}

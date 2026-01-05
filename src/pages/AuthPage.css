@@ -1,0 +1,121 @@
+/* Auth Page Styles */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.auth-header {
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.auth-header .logo {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-form-header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.auth-form-header h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--space-2);
+}
+
+.auth-form-header p {
+  color: var(--color-text-muted);
+}
+
+.auth-footer {
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.auth-footer a {
+  color: var(--color-text-muted);
+}
+
+.auth-footer a:hover {
+  color: var(--color-link);
+}
+
+/* Amplify Authenticator Theme Overrides */
+[data-amplify-authenticator] {
+  --amplify-colors-background-primary: var(--color-bg);
+  --amplify-colors-background-secondary: var(--color-bg-secondary);
+  --amplify-colors-brand-primary-10: rgba(118, 171, 174, 0.1);
+  --amplify-colors-brand-primary-20: rgba(118, 171, 174, 0.2);
+  --amplify-colors-brand-primary-40: rgba(118, 171, 174, 0.4);
+  --amplify-colors-brand-primary-60: rgba(118, 171, 174, 0.6);
+  --amplify-colors-brand-primary-80: var(--color-accent);
+  --amplify-colors-brand-primary-90: #5d9a9d;
+  --amplify-colors-brand-primary-100: #4a8a8d;
+  --amplify-colors-font-primary: var(--color-text);
+  --amplify-colors-font-secondary: var(--color-text-muted);
+  --amplify-colors-font-interactive: var(--color-accent);
+  --amplify-colors-border-primary: rgba(255, 222, 222, 0.2);
+  --amplify-colors-border-focus: var(--color-accent);
+  --amplify-radii-small: var(--radius-sm);
+  --amplify-radii-medium: var(--radius-md);
+  --amplify-radii-large: var(--radius-lg);
+  --amplify-space-small: var(--space-2);
+  --amplify-space-medium: var(--space-4);
+  --amplify-space-large: var(--space-6);
+}
+
+[data-amplify-authenticator] [data-amplify-container] {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid rgba(255, 222, 222, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+
+[data-amplify-authenticator] button[type="submit"] {
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+[data-amplify-authenticator] button[type="submit"]:hover {
+  background: #5d9a9d;
+}
+
+[data-amplify-authenticator] input {
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 222, 222, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+}
+
+[data-amplify-authenticator] input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(118, 171, 174, 0.2);
+}
+
+[data-amplify-authenticator] a {
+  color: var(--color-link);
+}

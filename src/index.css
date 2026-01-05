@@ -1,14 +1,28 @@
-* {
-  box-sizing: border-box;
+/* Base styles - design tokens are loaded in App.tsx via tokens.css */
+
+/* Loading Screen */
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg, #222831);
+  color: var(--color-text-muted, #9ca3af);
 }
 
-body {
-  margin: 0;
-  background: #111418;
-  font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', Arial, sans-serif;
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(118, 171, 174, 0.2);
+  border-top-color: #76ABAE;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
 }
 
-button {
-  font-family: inherit;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,0 +1,70 @@
+/* Error Pages Styles */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--color-bg);
+}
+
+.error-content {
+  text-align: center;
+  max-width: 480px;
+}
+
+.error-code {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-4);
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-5);
+  color: var(--color-warning);
+}
+
+.error-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.error-title {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--space-4);
+}
+
+.error-message {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  font-size: 18px;
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .error-code {
+    font-size: 80px;
+  }
+
+  .error-title {
+    font-size: var(--font-size-h2);
+  }
+
+  .error-message {
+    font-size: var(--font-size-body);
+  }
+}
