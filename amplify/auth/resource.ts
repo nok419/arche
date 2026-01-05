@@ -10,8 +10,8 @@ export const auth = defineAuth({
   },
   userAttributes: {
     nickname: { required: true, mutable: true },
-    'custom:role': { required: false, mutable: true, dataType: 'String' },
-    'custom:affiliation': { required: true, mutable: true, dataType: 'String' },
+    'custom:role': { mutable: true, dataType: 'String' },
+    'custom:affiliation': { mutable: true, dataType: 'String' },
   },
   groups: ['admin', 'teacher', 'researcher'],
 });
