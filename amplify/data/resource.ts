@@ -512,6 +512,8 @@ const schema = a.schema({
       userId: a.id().required(),
       projectId: a.id().required(),
       bookmarkTagIds: a.id().array(),
+      user: a.belongsTo('User', 'userId'),
+      project: a.belongsTo('Project', 'projectId'),
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('userId'),
