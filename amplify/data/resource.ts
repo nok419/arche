@@ -7,7 +7,7 @@ const schema = a.schema({
   Affiliation: a
     .model({
       name: a.string().required(),
-      type: a.enum(['university', 'art-school', 'other']),
+      type: a.enum(['university', 'artSchool', 'other']),
       code: a.string(),
       programs: a.hasMany('Program', 'affiliationId'),
       deletedAt: a.datetime(),
@@ -414,7 +414,8 @@ const schema = a.schema({
       asset: a.belongsTo('Asset', 'assetId'),
     })
     .authorization((allow) => [
-      allow.ownersDefinedIn('editorUserIds'),
+      allow.ownerDefinedIn('authorId').to(['create', 'read', 'update', 'delete']),
+      allow.ownersDefinedIn('editorUserIds').to(['read', 'delete']),
       allow.ownersDefinedIn('viewerUserIds').to(['read']),
       allow.group('admin'),
     ])
@@ -454,7 +455,8 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.ownerDefinedIn('projectOwnerId'),
-      allow.ownersDefinedIn('editorUserIds'),
+      allow.ownerDefinedIn('createdBy').to(['read', 'update', 'delete']),
+      allow.ownersDefinedIn('editorUserIds').to(['read', 'create']),
       allow.group('admin'),
     ])
     .secondaryIndexes((index) => [
@@ -585,7 +587,8 @@ const schema = a.schema({
       completedAt: a.datetime(),
     })
     .authorization((allow) => [
-      allow.groups(['admin', 'teacher', 'researcher']).to(['create', 'read']),
+      allow.ownerDefinedIn('requestedBy').to(['create', 'read']),
+      allow.group('admin'),
     ])
     .secondaryIndexes((index) => [index('requestedBy').name('byRequester')]),
 
